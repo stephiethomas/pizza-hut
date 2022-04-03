@@ -1,3 +1,5 @@
+const Pizza = require('./Pizza');
+const Comment = require('./Comment');
 const router = require('express').Router();
 const {
   getAllPizza,
