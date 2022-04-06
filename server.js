@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const { startSession } = require('./models/Pizza');
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -16,11 +16,11 @@ app.use(require('./routes'));
 //it will short-circuit to the local MongoDB server's database at mongodb://localhost:27017/pizza-hunt. 
 //The second argument in the example is a set of configuration options Mongoose asks for more information about.
 
-// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/pizza-hunt', {
-// //   useFindAndModify: false,
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true
-// });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/pizza-hunt', {
+
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 
 //Use this to log mongo queries being executed!
